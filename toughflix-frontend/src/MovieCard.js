@@ -4,7 +4,7 @@ import { Card, Image, Button } from 'semantic-ui-react'
 const MovieCard = props => {
 return(
     <Card color='black'>
-    <Image src={props.movie.poster} wrapped ui={false} />
+    <Image src={props.movie.poster} wrapped ui={false}/>
     <Card.Content>
       <Card.Header>{props.movie.title}</Card.Header>
       <Card.Meta textAlign='right'>
@@ -28,7 +28,9 @@ return(
             <strong>{props.movie.runtime}</strong>
         </span>
     </Card.Content>
-    <Button color='youtube' onClick={() => props.addToList(props.movie)}>Add to List</Button>
+    {props.removeBtn ? <Button color='youtube' onClick={() => props.handleList(props.movie)}>Remove from List</Button> : <Button color='youtube' onClick={() => props.handleList(props.movie)}>Add to List</Button>} 
+    
+
   </Card>
 )
 }

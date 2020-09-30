@@ -2,6 +2,11 @@ import React from 'react';
 import MovieCard from './MovieCard'
 
 class UserList extends React.Component {
+
+    state = {
+        removeBtn: true
+    }
+
     render() {
         return(
             <div className='ui-five-column-grid'>
@@ -10,7 +15,7 @@ class UserList extends React.Component {
 
                     {
                     this.props.users_list.map(movie => 
-                        <MovieCard className='ui card' key={movie.id} movie={movie} addToList={this.props.removeFromList} />
+                        <MovieCard className='ui card' key={movie.id} removeBtn={this.state.removeBtn} movie={movie} handleList={this.props.removeFromList} />
                     )
                     }
                 </div>
