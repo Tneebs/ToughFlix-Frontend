@@ -21,7 +21,7 @@ const Header = (props) => {
 
   return (
     <div className='navbar'>
-      <div className='header'> Toughflix </div>
+      <div className='header'><h1>ToughFlix</h1></div>
       <ul>
         <NavLink to="/"> Home </NavLink>
         {

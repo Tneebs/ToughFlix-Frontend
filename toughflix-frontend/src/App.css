@@ -47,5 +47,26 @@
 }
 
 .ui.card {
-  display: flex;
+  display: flex!important;
+}
+
+body {
+  background-color: black!important;
+}
+
+h1 {
+  color: white!important;
+}
+
+.navbar {
+  position: relative!important;
+}
+
+.header {
+  position: absolute!important;
+  right: 150px;
+}
+
+.flix {
+  color: red!important;
 }

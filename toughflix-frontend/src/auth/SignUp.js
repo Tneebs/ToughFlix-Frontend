@@ -4,7 +4,9 @@ class SignUp extends React.Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        name: '',
+        age: ''
     }
 
     handleInputChange = e => {
@@ -18,7 +20,9 @@ class SignUp extends React.Component {
         const newUser = {
             user: {
                 username: this.state.username,
-                password: this.state.password
+                password: this.state.password,
+                name: this.state.name,
+                age: this.state.age
             }
         }
         fetch('http://localhost:3000/signup', {
@@ -39,6 +43,8 @@ class SignUp extends React.Component {
                 <form className={'signup'} onSubmit={this.handleOnSubmit}>
                 <input type="text" value={this.state.username} onChange={this.handleInputChange} name='username' placeholder="Username"  />
                 <input type="password" value={this.state.password} onChange={this.handleInputChange} name='password' placeholder="Password"  />
+                <input type="name" value={this.state.name} onChange={this.handleInputChange} name='name' placeholder="Name" />
+                <input type="age" value={this.state.age} onChange={this.handleInputChange} name='age' placeholder="Age" />
                 <input id="submit" type="submit" value="Submit" />
             </form>
         </span>

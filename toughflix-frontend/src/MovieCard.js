@@ -1,43 +1,13 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 
 const MovieCard = props => {
-
-    // return (
-    //     <div className='ui-row-five'>
-    //         <div className='ui-card' key={props.movie.id}>
-    //             <div className='poster'>
-    //                 <img src={props.movie.poster} alt={props.movie.title} />
-    //             </div>
-    //             <div className='details'>
-    //                 <h4>{props.movie.title}</h4>
-    //                 <small>{props.movie.genre}</small>
-    //                 <br/>
-    //                 <small>{props.movie.year}</small>
-    //                 <br/>
-    //                 <small>{props.movie.rated}</small>
-    //                 <br/>
-    //                 <small>{props.movie.runtime}</small>
-    //             </div>
-    //             <br/>
-    //             <div className='details-extended'>
-    //                 <em>Cast: {props.movie.actors}</em>
-    //                 <br/>
-    //                 <br/>
-    //                 <em>Director: {props.movie.director}</em>
-    //                 <br/>
-    //                 <br/>
-    //                 <em>Plot: {props.movie.plot}</em>
-    //             </div>
-    //         </div>
-    //     </div>
-    // )
 return(
-    <Card>
+    <Card color='black'>
     <Image src={props.movie.poster} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{props.movie.title}</Card.Header>
-      <Card.Meta>
+      <Card.Meta textAlign='right'>
         <span className='date'>{props.movie.year}</span>
       </Card.Meta>
       <Card.Description>
@@ -58,6 +28,7 @@ return(
             <strong>{props.movie.runtime}</strong>
         </span>
     </Card.Content>
+    <Button color='youtube' onClick={() => props.addToList(props.movie)}>Add to List</Button>
   </Card>
 )
 }

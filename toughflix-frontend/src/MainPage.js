@@ -1,5 +1,6 @@
 import React from 'react';
 import GenreList from './GenreList'
+import UserList from './UserList'
 
 class MainPage extends React.Component {
 
@@ -7,7 +8,8 @@ class MainPage extends React.Component {
         movies: [],
         allMovies: [],
         users_list: [],
-        users: []
+        users: [],
+        sort: ''
     }
 
     componentDidMount() {
@@ -25,6 +27,20 @@ class MainPage extends React.Component {
         }))
     }
 
+    sortMovies = (e) => {
+        let sortedMovies = []
+        let newSort = ""
+        if (e === "Alphabetically" && this.state.movies !== undefined){
+          sortedMovies = this.state.movies.sort((a, b) => a.title.localeCompare(b.title))
+          newSort = "Alphabetically"
+          this.setState({
+            ...this.state,
+            movies: sortedMovies,
+            sort: newSort
+          })
+        }
+    }
+
     addToList = (addedMovie) => {
         this.setState({
             users_list: [...this.state.users_list, addedMovie]
@@ -40,9 +56,11 @@ class MainPage extends React.Component {
 
 
     render() {
+        console.log(this.state.movies)
         return (
             <div className='MainPage'>
-                <GenreList users_list={this.state.users_list} movies={this.state.movies} addToList={this.addToList} removeFromList={this.removeFromList} />
+                <UserList users_list={this.state.users_list} removeFromList={this.removeFromList} />
+                <GenreList sort={this.state.sort} sortMovies={this.sortMovies} movies={this.state.movies} addToList={this.addToList} />
             </div>
         )
     }
