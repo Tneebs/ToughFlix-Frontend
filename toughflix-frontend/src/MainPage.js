@@ -6,7 +6,7 @@ class MainPage extends React.Component {
 
     state = {
         movies: [],
-        allMovies: [],
+        selectedMovies: [],
         users_list: [],
         users: [],
         sort: ''
@@ -17,13 +17,13 @@ class MainPage extends React.Component {
             method: 'GET',
             headers: { 
                 'Content-Type': 'application/json',
-                'Auth-Key': localStorage.getItem('auth_key')
+                "Auth-Key": localStorage.getItem("auth_key")
             }
         })
         .then(resp => resp.json())
         .then(movies => this.setState({
             movies: movies,
-            allMovies: movies
+            selectedMovies: movies
         }))
     }
 

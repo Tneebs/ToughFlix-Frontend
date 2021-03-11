@@ -5,14 +5,14 @@ import Login from './auth/Login'
 import SignUp from './auth/SignUp'
 import Header from './Header'
 
-
-
 import {
   BrowserRouter,
   Route,
   Switch,
   Redirect
 } from 'react-router-dom';
+
+
 
 class App extends React.Component {
 

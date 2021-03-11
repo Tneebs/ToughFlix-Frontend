@@ -26,6 +26,7 @@ class MovieCard extends React.Component {
     let card2 = (
       <Card color='black' onClick={() => this.toggleDetails()}>
       <Card.Content>
+        {this.props.movie.title}
       <Card.Meta textAlign='right'>
         <span className='date'>{this.props.movie.year}</span>
       </Card.Meta>
