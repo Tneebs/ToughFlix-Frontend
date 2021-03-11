@@ -10,7 +10,7 @@ The inspiration for this app was simple. In every relationship, whatever kind of
 
 <img src="toughflix-frontend/src/images/ToughFlix_Screenshot.png" width="638">
 
-<img src="https://j.gifs.com/VA1VpX.gif">
+<img src="https://j.gifs.com/VA1VpX.gif" width="638">
 
 # Prerequisites
 
